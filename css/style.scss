@@ -1,0 +1,1349 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+.starttea {
+  // 菜單
+  .starttea_menu {
+    display: none;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    background: #000;
+    padding-bottom: 50px;
+    z-index: 1;
+    overflow: scroll;
+    img {
+      display: block;
+      width: 50%;
+      margin: 80px auto 20px;
+      // padding-bottom: 30px;
+      // z-index: 2;
+      // overflow: scroll;
+    }
+    .menu_close {
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+      display: none;
+      color: #fff;
+      font-size: 3.5em;
+      text-align: right;
+      padding: 20px 50px 0px 0px;
+      cursor: pointer;
+      z-index: 2;
+    }
+  }
+  // 首頁3張照片
+  .store {
+    width: 100%;
+    /*600 : 437 = 1 : X, X = 0.7 (70%)*/
+    /*position: relative 須設定高度，下一個兄弟元素才會往下排列顯示*/
+    height: 70vw;
+    position: relative;
+    img {
+      width: 100%;
+      position: absolute;
+      transition: all 2s;
+    }
+    .dark {
+      opacity: 1;
+    }
+    .light {
+      opacity: 0;
+    }
+  }
+  // 首頁至頂 nav
+  .store_title {
+    width: 100%;
+    // height: 150px;
+    position: fixed;
+    // top: 50px;
+    top: 0;
+    // background: #cf997a;
+    // height: 128px;
+    // height: 12.5vh;
+    // padding-top: 50px;
+    // 有設透明度的元件會在沒設透明度的元件之上
+    z-index: 1;
+    // margin-top: 30px;
+    .up {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 30px;
+      .left {
+        width: 10vw;
+        margin-left: 60px;
+        cursor: pointer;
+        .logo {
+          width: 100%;
+        }
+      }
+      .right {
+        width: 8vw;
+        margin-right: 60px;
+        margin-top: 20px;
+        cursor: pointer;
+        .menu {
+          width: 100%;
+        }
+      }
+    }
+    .line {
+      width: 90%;
+      height: 3px;
+      background: #000;
+      margin: 18px auto 0;
+    }
+    .remove {
+      display: none;
+    }
+  }
+  .add_color {
+    background: #cf997a;
+    padding-bottom: 10px;
+  }
+  // open menu
+  .open_menu {
+    display: none;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    opacity: 0.75;
+    z-index: 3;
+    .close {
+      color: #fff;
+      font-size: 5em;
+      text-align: right;
+      padding: 20px 50px 50px 0;
+      cursor: pointer;
+    }
+    .item {
+      text-align: center;
+      color: #fff;
+      font-size: 2em;
+      margin-bottom: 50px;
+      a {
+        text-decoration: none;
+        color: #fff;
+      }
+    }
+  }
+  // message
+  .message {
+    width: 100%;
+    background: url("../images/action/背景新.svg") no-repeat;
+    /*原本背景圖不夠大，加上 background-size: cover 才能填滿螢幕，只有 cover 才能*/
+    background-size: cover;
+    /*下行是讓背景圖固定不移動*/
+    background-attachment: fixed;
+    padding-bottom: 150px;
+    img {
+      display: block;
+    }
+    .message_title {
+      // width: 80%;
+      width: 420px;
+      /*img 加上 display: block，寬度才會是100%，才能夠被置中(auto)*/
+      display: block;
+      margin: 0 auto;
+      padding: 150px 0 90px;
+    }
+    .message_block {
+      display: flex;
+      flex-wrap: wrap;
+      width: 90%;
+      margin: 0 auto;
+      .message_img {
+        display: block;
+        width: 30%;
+        margin: 0 auto;
+        cursor: pointer;
+      }
+    }
+  }
+  .open_message {
+    display: none;
+    width: 100%;
+    // height: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    background: #000;
+    padding-bottom: 50px;
+    z-index: 1;
+    overflow: scroll;
+    img {
+      display: block;
+      width: 50%;
+      margin: 80px auto 20px;
+      // padding-bottom: 30px;
+      // z-index: 2;
+      // overflow: scroll;
+    }
+    .close {
+      display: none;
+      color: #fff;
+      font-size: 5em;
+      text-align: right;
+      padding: 20px 50px 0px 0px;
+      cursor: pointer;
+      z-index: 2;
+    }
+  }
+  .product {
+    .product_title {
+      width: 420px;
+      display: block;
+      margin: 130px auto 70px;
+    }
+    .thailand_block {
+      width: 100vw;
+      background-color: #973c3f;
+      .thailand {
+        display: block;
+        width: 60vw;
+        margin-bottom: 100px;
+        margin: 0 auto;
+      }
+    }
+
+    // .thailand_detail {
+    // width: 500px;
+    // margin: 120px auto 0;
+    // overflow: hidden;
+    // z-index: 5;
+    .details {
+      width: 30vw;
+      overflow: hidden;
+      display: flex;
+
+      /*若不加移動時，第二張照片會跑更多導致位移*/
+      justify-content: space-between;
+
+      /*加了第一張img才會在正中間，而第二張會在第一張置中後往第一張後面排，而不是總共2張img，2張一起置中，原因應該是img為inline*/
+      margin: 40px auto;
+
+      img {
+        width: 30vw;
+      }
+    }
+    // }
+    .thailand_dot {
+      display: flex;
+      justify-content: center;
+      width: 100px;
+      margin: 20px auto;
+      div {
+        width: 10px;
+        height: 10px;
+        background: #dcdcdc;
+        margin: 0 5px;
+        border-radius: 50%;
+        cursor: pointer;
+      }
+      .dark {
+        background: #000;
+      }
+    }
+
+    /*台式*/
+    .drink {
+      display: block;
+      margin: 200px auto 150px;
+      width: 50vw;
+    }
+    .taiwan_drink {
+      width: 30vw;
+      overflow: hidden;
+      display: flex;
+
+      /*若不加移動時，第二張照片會跑更多導致位移*/
+      justify-content: space-between;
+
+      /*加了第一張img才會在正中間，而第二張會在第一張置中後往第一張後面排，而不是總共2張img，2張一起置中，原因應該是img為inline*/
+      margin: 40px auto;
+
+      img {
+        width: 30vw;
+      }
+    }
+    .taiwan_dot {
+      display: flex;
+      justify-content: center;
+      width: 100px;
+      margin: 20px auto;
+      div {
+        width: 10px;
+        height: 10px;
+        background: #dcdcdc;
+        margin: 0 5px;
+        border-radius: 50%;
+        cursor: pointer;
+      }
+      .dark {
+        background: #000;
+      }
+    }
+    .menu_btn {
+      display: none;
+      z-index: 5;
+      img {
+        display: block;
+        width: 150px;
+        height: 150px;
+        position: fixed;
+        bottom: 65px;
+        right: 65px;
+      }
+    }
+  }
+  /*where 門市資訊*/
+  .where {
+    width: 100%;
+    background: #cf997a;
+    .where_title_image {
+      display: block;
+      width: 25%;
+      margin: 180px auto 100px;
+      padding-top: 100px;
+    }
+    .where_block {
+      // width: 50%;
+      // margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      // background: #b75f2d;
+      .where_detail {
+        width: 600px;
+        margin: 0 50px 30px;
+        background: #fff;
+        .where_image {
+          display: block;
+          margin: 0 auto;
+          width: 100%;
+        }
+        .down {
+          width: 600px;
+          display: flex;
+          justify-content: space-between;
+          padding: 25px 0 20px 35px;
+          .where_text {
+            .title {
+              font-size: 2em;
+              font-weight: bold;
+              color: #807878;
+              font-family: Arial, Helvetica, sans-serif;
+              margin-bottom: 20px;
+              .one,
+              .two {
+                margin-right: 5px;
+              }
+              .two {
+                font-weight: normal;
+              }
+              .three {
+                font-size: 0.8em;
+                padding: 7px 12px;
+                background: #d9d9d9;
+                color: #000;
+              }
+            }
+            .data {
+              font-size: 1.1em;
+              font-weight: bold;
+              line-height: 1.5em;
+              margin-bottom: 10px;
+            }
+            .other {
+              a {
+                display: block;
+                color: #d09d9d;
+                text-decoration: none;
+                font-size: 1.3em;
+                margin-bottom: 8px;
+              }
+              a:hover {
+                color: #b75f2d;
+                text-decoration: none;
+              }
+            }
+          }
+          .down_image {
+            img {
+              height: 160px;
+              opacity: 0.3;
+              margin-top: 30px;
+            }
+          }
+        }
+      }
+    }
+  }
+  .history {
+    width: 100%;
+    padding-bottom: 50px;
+    .history_title {
+      display: block;
+      width: 30%;
+      margin: 150px auto;
+      // padding-top: 100px;
+    }
+    .history_image {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      width: 90%;
+      margin: 0 auto;
+      .block {
+        a {
+          text-decoration: none;
+          img {
+            width: 250px;
+            height: 250px;
+            margin: 20px;
+            opacity: 0.6;
+            cursor: pointer;
+            transition: all 0.7s;
+          }
+          .dark {
+            opacity: 1;
+          }
+          .light {
+            opacity: 0.6;
+          }
+        }
+      }
+    }
+  }
+  .footer {
+    width: 100%;
+    background-color: #c27136;
+    color: #fff;
+    padding: 80px 0;
+    .footer_block {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      width: 90%;
+      margin: 0 auto;
+      .footer_text {
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        width: 54%;
+        .footer_title {
+          font-size: 2.7em;
+          margin-bottom: 40px;
+          span {
+            margin-left: 15px;
+          }
+        }
+        .add_block,
+        .night {
+          font-size: 1.3em;
+          margin-bottom: 10px;
+        }
+        .add_block {
+          width: 80%;
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: space-between;
+        }
+      }
+      .footer_img {
+        a {
+          text-decoration: none;
+          img {
+            width: 50px;
+            height: 100px;
+            margin-right: 20px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1000px) {
+  .starttea {
+    .message {
+      .message_title {
+        width: 320px;
+        padding-bottom: 50px;
+      }
+    }
+    .product {
+      .product_title {
+        width: 320px;
+      }
+      .menu_btn {
+        img {
+          width: 120px;
+          height: 120px;
+        }
+      }
+    }
+    .where {
+      .where_title_image {
+        width: 35%;
+      }
+    }
+  }
+}
+@media (max-width: 900px) {
+  .starttea {
+    .history {
+      .history_title {
+        width: 40%;
+        margin: 100px auto;
+      }
+      .history_image {
+        .block {
+          img {
+            width: 200px;
+            height: 200px;
+          }
+        }
+      }
+    }
+  }
+}
+@media (max-width: 850px) {
+  .starttea {
+    .store_title {
+      .up {
+        .left {
+          width: 15vw;
+        }
+      }
+    }
+    .product {
+      .menu_btn {
+        img {
+          width: 100px;
+          height: 100px;
+        }
+      }
+    }
+  }
+}
+@media (max-width: 800px) {
+  .starttea {
+    .footer {
+      padding: 50px 10px;
+      .footer_block {
+        .footer_text {
+          .footer_title {
+            font-size: 2em;
+          }
+          .add_block,
+          .night {
+            font-size: 1.1em;
+          }
+        }
+        .footer_img {
+          a {
+            img {
+              width: 40px;
+              height: 80px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@media (max-width: 750px) {
+  .starttea {
+    .message {
+      padding-bottom: 100px;
+      .message_title {
+        width: 230px;
+        padding: 100px 0 20px;
+      }
+    }
+    .product {
+      .product_title {
+        width: 230px;
+      }
+      .drink {
+        margin-top: 100px;
+        margin-bottom: 100px;
+      }
+    }
+    .where {
+      .where_block {
+        .where_detail {
+          width: 70%;
+          .down {
+            width: 100%;
+            .where_text {
+              .title {
+                font-size: 1.5em;
+              }
+              // .data {
+              //   font-size: 1em;
+              // }
+              .other {
+                font-size: 0.9em;
+              }
+            }
+            .down_image {
+              img {
+                height: 140px;
+                margin-top: 20px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@media (max-width: 700px) {
+  .starttea {
+    .starttea_menu {
+      .menu_close {
+        font-size: 3em;
+      }
+    }
+    .product {
+      .menu_btn {
+        img {
+          right: 30px;
+          bottom: 30px;
+        }
+      }
+    }
+    .where {
+      .where_block {
+        .where_detail {
+          .down {
+            .where_text {
+              .title {
+                font-size: 1.5em;
+              }
+              .data {
+                font-size: 0.9em;
+              }
+              .other {
+                font-size: 0.8em;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@media (max-width: 670px) {
+  .starttea {
+    .footer {
+      padding: 40px 10px;
+      .footer_block {
+        .footer_text {
+          .footer_title {
+            font-size: 1.8em;
+          }
+          .add_block,
+          .night {
+            font-size: 1em;
+          }
+        }
+      }
+    }
+  }
+}
+@media (max-width: 650px) {
+  .starttea {
+    .store_title {
+      // top: 30px;
+      .up {
+        .left {
+          margin-left: 40px;
+        }
+        .right {
+          margin-right: 40px;
+          margin-top: 15px;
+        }
+      }
+      .line {
+        margin-top: 10px;
+      }
+    }
+    .message {
+      .message_block {
+        .message_img {
+          width: 35%;
+        }
+      }
+    }
+    .product {
+      .product_title {
+        margin-top: 90px;
+      }
+    }
+    .where {
+      .where_block {
+        .where_detail {
+          .down {
+            .where_text {
+              .title {
+                font-size: 1.4em;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@media (max-width: 610px) {
+  .starttea {
+    .footer {
+      .footer_block {
+        .footer_text {
+          width: 85%;
+          margin: 0 auto;
+          .footer_title {
+            text-align: center;
+          }
+          .add_block,
+          .night {
+            margin-bottom: 15px;
+          }
+          .add_block {
+            justify-content: center;
+          }
+          .night {
+            text-align: center;
+          }
+        }
+        .footer_img {
+          margin: 40px auto 0;
+        }
+      }
+    }
+  }
+}
+@media (max-width: 600px) {
+  .starttea {
+    .starttea_menu {
+      .menu_close {
+        font-size: 2em;
+      }
+    }
+    .store_title {
+      .up {
+        margin-top: 20px;
+      }
+    }
+    .product {
+      .menu_btn {
+        img {
+          width: 80px;
+          height: 80px;
+        }
+      }
+    }
+    .history {
+      .history_title {
+        margin: 80px auto;
+      }
+      .history_image {
+        .block {
+          img {
+            width: 150px;
+            height: 150px;
+            margin: 10px;
+          }
+        }
+      }
+    }
+  }
+}
+@media (max-width: 550px) {
+  .starttea {
+    .store_title {
+      .up {
+        .right {
+          width: 10vw;
+        }
+      }
+      .line {
+        height: 2px;
+      }
+    }
+    .message {
+      .message_title {
+        width: 200px;
+        padding-top: 70px;
+      }
+    }
+    .open_message {
+      .close {
+        font-size: 3em;
+        padding: 20px 20px 0px 0px;
+      }
+      img {
+        margin-top: 40px;
+      }
+    }
+    .product {
+      .product_title {
+        width: 200px;
+      }
+    }
+  }
+}
+@media (max-width: 500px) {
+  .starttea {
+    .starttea_menu {
+      img {
+        width: 70%;
+      }
+    }
+    .store_title {
+      .up {
+        margin-top: 20px;
+      }
+    }
+    .product {
+      .thailand_dot {
+        width: 30vw;
+        margin-top: -15px;
+        div {
+          width: 7px;
+          height: 7px;
+        }
+      }
+    }
+    .where {
+      .where_block {
+        .where_detail {
+          width: 95%;
+          .down {
+            padding: 25px;
+          }
+        }
+      }
+    }
+  }
+}
+@media (max-width: 450px) {
+  .starttea {
+    .store_title {
+      .up {
+        .right {
+          margin-top: 10px;
+        }
+      }
+      .line {
+        margin-top: 5px;
+      }
+    }
+    .open_menu {
+      .item {
+        font-size: 1.5em;
+      }
+    }
+    .message {
+      padding-bottom: 50px;
+      .message_title {
+        width: 180px;
+        padding-top: 50px;
+      }
+      .message_block {
+        .message_img {
+          width: 45%;
+        }
+      }
+    }
+    .product {
+      .product_title {
+        width: 180px;
+      }
+      .drink {
+        margin-top: 50px;
+        margin-bottom: 50px;
+      }
+      .menu_btn {
+        img {
+          width: 65px;
+          height: 65px;
+          right: 20px;
+          bottom: 20px;
+        }
+      }
+    }
+    .where {
+      .where_title_image {
+        margin-top: 100px;
+      }
+    }
+  }
+}
+@media (max-width: 415px) {
+  .starttea {
+    .footer {
+      .footer_block {
+        width: 100%;
+        .footer_text {
+          .footer_title {
+            margin-bottom: 25px;
+          }
+          .add_block,
+          .night {
+            margin-bottom: 20px;
+            font-size: 0.9em;
+          }
+        }
+        .footer_img {
+          margin: 30px auto 0;
+        }
+      }
+    }
+  }
+}
+@media (max-width: 400px) {
+  .starttea {
+    .starttea_menu {
+      .menu_close {
+        padding-right: 20px;
+      }
+    }
+    .product {
+      .thailand_dot {
+        margin-top: -25px;
+        div {
+          width: 5px;
+          height: 5px;
+          margin: 0 3px;
+        }
+      }
+    }
+    .where {
+      .where_block {
+        .where_detail {
+          .down {
+            .where_text {
+              .title {
+                font-size: 1.2em;
+                .one,
+                .two {
+                  margin-right: 0px;
+                }
+              }
+              .data {
+                font-size: 0.8em;
+              }
+              .other {
+                font-size: 0.7em;
+              }
+            }
+          }
+        }
+      }
+    }
+    .history {
+      .history_title {
+        width: 45%;
+        margin-bottom: 50px;
+      }
+      .history_image {
+        .block {
+          img {
+            width: 120px;
+            height: 120px;
+            margin: 7px;
+          }
+        }
+      }
+    }
+  }
+}
+@media (max-width: 370px) {
+  .starttea {
+    .store_title {
+      // top: 20px;
+      .up {
+        .left {
+          margin-left: 30px;
+        }
+        .right {
+          margin-right: 30px;
+        }
+      }
+      .line {
+        margin-top: 5px;
+      }
+    }
+    .message {
+      .message_title {
+        width: 160px;
+        padding-bottom: 10px;
+      }
+      .message_block {
+        .message_img {
+          width: 250px;
+        }
+      }
+    }
+    .product {
+      .product_title {
+        width: 160px;
+      }
+    }
+    .footer {
+      .footer_block {
+        .footer_text {
+          .footer_title {
+            font-size: 1.7em;
+            span {
+              margin-left: 10px;
+            }
+          }
+          .add_block,
+          .night {
+            font-size: 0.8em;
+          }
+        }
+        .footer_img {
+          a {
+            img {
+              width: 30px;
+              height: 60px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@media (max-width: 350px) {
+  .starttea {
+    .starttea_menu {
+      img {
+        margin-top: 40px;
+      }
+    }
+    .store_title {
+      .up {
+        margin-top: 15px;
+      }
+    }
+    .message {
+      padding-bottom: 30px;
+    }
+    .product {
+      .product_title {
+        margin-top: 60px;
+        padding-bottom: 0px;
+      }
+    }
+    .where {
+      .where_title_image {
+        margin-top: 50px;
+        padding-top: 50px;
+        margin-bottom: 50px;
+      }
+    }
+    .history {
+      .history_image {
+        .block {
+          a {
+            img {
+              width: 200px;
+              height: 200px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@media (max-width: 320px) {
+  .starttea {
+    .open_message {
+      .close {
+        font-size: 2em;
+      }
+      img {
+        margin-top: 15px;
+      }
+    }
+  }
+}
+@media (max-width: 300px) {
+  .starttea {
+    .store_title {
+      .up {
+        .right {
+          margin-top: 5px;
+        }
+      }
+      .line {
+        height: 1px;
+        margin-top: 5px;
+      }
+    }
+    .message {
+      .message_block {
+        .message_img {
+          width: 200px;
+        }
+      }
+    }
+    .product {
+      .menu_btn {
+        img {
+          width: 55px;
+          height: 55px;
+          right: 10px;
+          bottom: 10px;
+        }
+      }
+    }
+    .footer {
+      .footer_block {
+        .footer_text {
+          .footer_title {
+            font-size: 1.5em;
+            span {
+              margin-left: 10px;
+            }
+          }
+          .add_block,
+          .night {
+            font-size: 0.7em;
+          }
+        }
+        .footer_img {
+          margin-top: 20px;
+          a {
+            img {
+              width: 25px;
+              height: 50px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+// .starttea {
+//   .store {
+//     img {
+//       width: 100%;
+//       position: absolute;
+//       transition: all 2s;
+//     }
+//     .dark {
+//       opacity: 1;
+//     }
+//     .light {
+//       opacity: 0;
+//     }
+//   }
+//   // position: relative;
+//   // max-width: 960px;
+//   // width: 960px;
+//   // width: 100%;
+//   // margin: 0 auto;
+//   // background-color: #000;
+//   // overflow: hidden;
+
+//   //   /*圖片輪播 (移動式轉場)*/
+//   // .store {
+//   //   width: 2880px;
+//   //   width: 960px;
+//   //   height: 960px;
+//   //   display: flex;
+//   //   overflow: hidden;
+//   // }
+//   //   /*圖片輪播 (移動式轉場)*/
+
+//   .store_title {
+//     // position: absolute;
+//     // top: 50px;
+//     // left: 0px;
+//     position: fixed;
+//     top: 50px;
+//     .up {
+//       width: 960px;
+//       display: flex;
+//       justify-content: space-between;
+//       .logo {
+//         width: 230px;
+//         margin-left: 60px;
+//         cursor: pointer;
+//       }
+//       .menu {
+//         width: 146px;
+//         height: 80px;
+//         margin-top: 30px;
+//         margin-right: 60px;
+//         cursor: pointer;
+//       }
+//     }
+//     .line {
+//       width: 90%;
+//       height: 3px;
+//       background: #000;
+//       margin-left: 43px;
+//       margin-top: 28px;
+//     }
+//   }
+//   .open_menu {
+//     display: none;
+//     position: fixed;
+//     top: 0;
+//     width: 960px;
+//     height: 100%;
+//     background: #000;
+//     opacity: 0.75;
+//     .close {
+//       color: #fff;
+//       font-size: 5em;
+//       text-align: right;
+//       padding: 20px 50px 50px 0;
+//       cursor: pointer;
+//     }
+//     .item {
+//       text-align: center;
+//       color: #fff;
+//       font-size: 2em;
+//       margin-bottom: 50px;
+//       a {
+//         text-decoration: none;
+//         color: #fff;
+//       }
+//     }
+//   }
+//   .message {
+//     background: url("../images/action/大背景.png");
+//     background-attachment: fixed;
+//     // width: 960px;
+//     padding-bottom: 10px;
+//     img {
+//       display: block;
+//       cursor: pointer;
+//     }
+//     .message_title {
+//       width: 40%;
+//       margin: 0px auto 100px;
+//       padding-top: 100px;
+//     }
+//     .message1,
+//     .message2,
+//     .message3 {
+//       width: 50%;
+//       margin: 0 auto 100px;
+//     }
+//     .message_btn1,
+//     .message_btn2,
+//     .message_btn3 {
+//       width: 80px;
+//       height: 80px;
+//       margin-top: -246px;
+//       margin-bottom: 200px;
+//       margin-left: 612px;
+//     }
+//   }
+//   .open_message {
+//     display: none;
+//     width: 960px;
+//     height: 100%;
+//     position: fixed;
+//     top: 0;
+//     background: #000;
+//     .message_detail1,
+//     .message_detail2,
+//     .message_detail3 {
+//       display: none;
+//       margin: 80px auto 0;
+//     }
+//     .close1,
+//     .close2,
+//     .close3 {
+//       display: none;
+//       color: #fff;
+//       font-size: 5em;
+//       text-align: right;
+//       padding: 20px 50px 0px 0px;
+//     }
+//     .message_detail3 {
+//       width: 700px;
+//     }
+//   }
+//   .product {
+//     width: 960px;
+//     .product_title {
+//       display: block;
+//       width: 40%;
+//       margin: 0px auto 150px;
+//     }
+//     .thailand {
+//       width: 960px;
+//       margin-bottom: 130px;
+//     }
+//     .thailand_detail {
+//       width: 600px;
+//       overflow: hidden;
+//       margin: 0 auto;
+//       .details {
+//         display: flex;
+//         width: 1800px;
+//         margin-bottom: 70px;
+//       }
+//     }
+//     .thailand_dot {
+//       width: 960px;
+//       display: flex;
+//       justify-content: center;
+//       margin-bottom: 100px;
+//       .dot1,
+//       .dot2,
+//       .dot3 {
+//         width: 20px;
+//         height: 20px;
+//         background: #d9d9d9;
+//         margin-right: 20px;
+//       }
+//     }
+//     .drink {
+//       width: 960px;
+//       margin-bottom: 70px;
+//     }
+//     .taiwan_drink {
+//       width: 600px;
+//       overflow: hidden;
+//       margin: 0 auto;
+//       .details {
+//         width: 3000px;
+//         // height: 780px;
+//         display: flex;
+//         margin-bottom: 30px;
+//       }
+//     }
+//     .taiwan_dot {
+//       width: 960px;
+//       display: flex;
+//       justify-content: center;
+//       margin-bottom: 100px;
+//       .dot1,
+//       .dot2,
+//       .dot3 {
+//         width: 20px;
+//         height: 20px;
+//         background: #d9d9d9;
+//         margin-right: 20px;
+//       }
+//     }
+//   }
+// }
