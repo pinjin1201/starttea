@@ -8,32 +8,32 @@ $(function () {
   //------------------------------------
 
   //*** 頁首照片輪播 (網頁)
-  // let n = 2;
-  // setInterval(function () {
-  //   function turnOpacity(t_n) {
-  //     if ($(".starttea .store img").eq(t_n).attr("class", "light")) {
-  //       $(".starttea .store img").eq(t_n).removeClass("light");
-  //       $(".starttea .store img").eq(t_n).addClass("dark");
-  //     }
-  //   }
-  //   if (n == -1) {
-  //     n = 2;
-  //   }
-  //   if (n == 2) {
-  //     turnOpacity(0);
-  //     $(".starttea .store img").eq(n).toggleClass("light");
-  //   }
-  //   if (n == 1) {
-  //     // console.log("1");
-  //     $(".starttea .store img").eq(n).toggleClass("light");
-  //   }
-  //   if (n == 0) {
-  //     turnOpacity(2);
-  //     turnOpacity(1);
-  //     $(".starttea .store img").eq(n).toggleClass("light");
-  //   }
-  //   n--;
-  // }, 2000);
+  let n = 2;
+  setInterval(function () {
+    function turnOpacity(t_n) {
+      if ($(".starttea .store img").eq(t_n).attr("class", "light")) {
+        $(".starttea .store img").eq(t_n).removeClass("light");
+        $(".starttea .store img").eq(t_n).addClass("dark");
+      }
+    }
+    if (n == -1) {
+      n = 2;
+    }
+    if (n == 2) {
+      turnOpacity(0);
+      $(".starttea .store img").eq(n).toggleClass("light");
+    }
+    if (n == 1) {
+      // console.log("1");
+      $(".starttea .store img").eq(n).toggleClass("light");
+    }
+    if (n == 0) {
+      turnOpacity(2);
+      turnOpacity(1);
+      $(".starttea .store img").eq(n).toggleClass("light");
+    }
+    n--;
+  }, 2000);
 
   // *****兩張圖片輪播 (fadein/out)
   // setInterval(function () {
